@@ -1,5 +1,5 @@
 # Data analysis package
------------------------
+
 This package inlcudes three modules:
 1. file_loader.py
 2. image_processor.py
