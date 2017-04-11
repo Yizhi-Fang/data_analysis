@@ -6,9 +6,9 @@ This package contains three modules:
 3. hkl_calculator.py
 
 _Note classes are listed in the format:_
-- Parent
-  * Child 1
-  * Child 2
+- _Parent_
+  * _Child 1_
+  * _Child 2_
 
 ### file_loader.py
 
