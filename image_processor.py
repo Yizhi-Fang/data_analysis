@@ -16,7 +16,7 @@ Line1D:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.02.06"
+__version__ = "2017.04.11"
 
 import re
 from abc import ABCMeta, abstractmethod
