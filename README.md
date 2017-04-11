@@ -1,27 +1,33 @@
 # Data analysis package
 
-This package inlcudes three modules:
+This package contains three modules:
 1. file_loader.py
 2. image_processor.py
 3. hkl_calculator.py
 
+_Note_
+Classes are listed in the format
+- Parent
+  * Child 1
+  * Child 2
+
 ### file_loader.py
 
-_I/O module_
+_I/O module._
 
 This module creates a File class that can fetch data and/or plot data.
 
-Available classes are one of following
+Available classes are following
 - File
-* MCPDataFile
-* TESConfigFile
-* SPECParamFile
-* ScanFileAPS29
-* SCanFileSSRL13
+  * MCPDataFile
+  * TESConfigFile
+  * SPECParamFile
+  * ScanFileAPS29
+  * SCanFileSSRL13
 
 ### image_processor.py
 
-_Image processor module_
+_Image processor module._
 
 This module creates 2D Image class that contains data plotting, peak searching
 and plotting, line cutting (which returns 1D Line class).
@@ -37,9 +43,9 @@ Available classes are one of following
   * Line1DSSRL13
   * Hist1DTES
 
-### hl_calculator.py
+### hkl_calculator.py
 
-_hkl mapping module_
+_hkl mapping module._
 
 This module creates AreaDetector class that can calculate hkl for each pixel
 given all angles in 4-circle diffractometer.
