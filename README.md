@@ -5,8 +5,7 @@ This package contains three modules:
 2. image_processor.py
 3. hkl_calculator.py
 
-_Note_
-Classes are listed in the format
+_Note Classes are listed in the format_
 - Parent
   * Child 1
   * Child 2
