@@ -12,7 +12,7 @@ File:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.04.11"
+__version__ = "2017.04.17"
 
 import re
 from os.path import join
