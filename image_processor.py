@@ -16,7 +16,7 @@ Line1D:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.04.11"
+__version__ = "2017.04.17"
 
 import re
 from abc import ABCMeta, abstractmethod
@@ -73,8 +73,6 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
-        # To add frame and remove the background color and grids.
-        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 6))
         im = ax.imshow(original_data,
@@ -179,8 +177,6 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
-        # To add frame and remove the background color and grids.
-        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 6))
         im = ax.imshow(original_data,
@@ -322,7 +318,7 @@ class Line1D:
             plt.show()
 
         except AttributeError:
-            print("Change new_plot feature to True (default is False)!")
+            print("Change new_plot argument to True (default is False)!")
 
     def fit_by_lmfit(self, p0, method, gamma_default=True, norm=False):
         """Fit a line with defined functions/builtin models by using lmfit,
@@ -441,7 +437,7 @@ class Line1D:
             return result
 
         except AttributeError:
-            print("You need to plot line first!")
+            print("Plot original data first!")
 
     def fit_by_kde(self):
         """kde fitting.
@@ -457,6 +453,8 @@ class Line1D:
         counts = np.asarray(self.y, dtype=int)
         input_data = np.repeat(self.x, counts)
 
+        # To add frame and remove the background color and grids.
+        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 6))
 
@@ -584,25 +582,30 @@ class Hist1DTES(Line1D):
         else:
             y = self.y
 
-        plt.ion()
-
         if new_plot:
             lines = []
+            # To add frame and remove the background color and grids.
+            sns.set_style("white")
             fig, ax = plt.subplots(figsize=(9, 6))
             self.fig = fig
             self.ax = ax
             self.lines = lines
 
-        line, = self.ax.step(self.x, y, lw=2)
-        self.lines.append(line)
+        try:
+            plt.ion()
+            line, = self.ax.step(self.x, y, lw=2)
+            self.lines.append(line)
 
-        # Change line colors later based on number of lines.
-        colors = sns.color_palette("husl", len(self.lines))
-        for line, c in zip(self.lines, colors):
-            line.set_color(c)
+            # Change line colors later based on number of lines.
+            colors = sns.color_palette("husl", len(self.lines))
+            for line, c in zip(self.lines, colors):
+                line.set_color(c)
 
-        self.fig.set_tight_layout(True)
-        plt.show()
+            self.fig.set_tight_layout(True)
+            plt.show()
+
+        except AttributeError:
+            print("Change new_plot argument to True (default is False)!")
 
     def resp_func(self):
         """TES response function.
@@ -833,7 +836,7 @@ class Hist1DTES(Line1D):
             return params
 
         except AttributeError:
-            print("You need to plot line first!")
+            print("Plot original data first!")
 
     def line_type(self):
         return "1D histogram class for TES spectrometer"
