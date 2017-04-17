@@ -299,8 +299,11 @@ class ScanFileAPS29(File):
         data = super().fetch_data()
         return data[:, 1:]
 
-    def col_num(self):
+    def col_num(self, chans=[]):
         """Find out column number for certain variables.
+        
+        Args:
+            chans: A list of channels recorded.
 
         Returns:
             Dictionary with variable names as key and column numbers as value.
@@ -310,12 +313,17 @@ class ScanFileAPS29(File):
             for i, line in enumerate(f):
                 if re.search("29idb:ca14:read", line):
                     col_table["I0"] = int(line.split()[1]) - 2
-                if re.search("TES:trigger_rate", line):
-                    col_table["TES_total"] = int(line.split()[1]) - 2
                 if re.search("29idd:ca2:read", line):
                     col_table["TEY"] = int(line.split()[1]) - 2
                 if re.search("29idd:ca3:read", line):
                     col_table["PhDiode"] = int(line.split()[1]) - 2
+                if re.search("29ID:TES:trigger_rate", line):
+                    col_table["TES_total"] = int(line.split()[1]) - 2
+                for c in chans:
+                    if re.search("29ID:TES:chan{:d}_trigger_rate".format(c),
+                                 line):
+                        col_table["TES_chan{:d}".format(c)] = (
+                            int(line.split()[1]) - 2)
         return col_table
 
     def plot_data(self):
@@ -341,7 +349,8 @@ class ScanFileAPS29(File):
             else:
                 y_norm = (y-np.min(y)) / (np.max(y)-np.min(y))
             ax.plot(data[:, 0], y_norm, "-o", ms=6, lw=2, label=key)
-        ax.legend(loc="upper right", frameon=False)
+        # seaborn sets frame off by default.
+        ax.legend()
         plt.setp(ax,
                  title=re.sub("\.[a-z0-9]+$", "", self._file_name),
                  ylim=[-0.1, 1.1])
@@ -416,7 +425,7 @@ class ScanFileSSRL13(File):
     def plot_data(self):
         """Plot scan record at SSRL 13-3.
 
-        All data points will be normalized with I0 (14th column).
+        All data points will be normalized with I0 except I0.
         """
         col_table = self.col_num()
         data = self.fetch_data()
@@ -436,7 +445,8 @@ class ScanFileSSRL13(File):
             else:
                 y_norm = (y-np.min(y)) / (np.max(y)-np.min(y))
             ax.plot(data[:, 0], y_norm, "-o", ms=6, lw=2, label=key)
-        ax.legend(loc="upper right", frameon=False)
+        # seaborn sets frame off by default.
+        ax.legend()
         plt.setp(ax,
                  title=re.sub("\.[a-z0-9]+$", "", self._file_name),
                  ylim=[-0.1, 1.1])

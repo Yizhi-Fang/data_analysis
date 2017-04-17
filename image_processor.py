@@ -32,6 +32,7 @@ from lmfit import Model
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import cm
+import seaborn as sns
 
 
 class Image2D:
@@ -72,6 +73,8 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
+        # To add frame and remove the background color and grids.
+        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 6))
         im = ax.imshow(original_data,
@@ -176,6 +179,8 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
+        # To add frame and remove the background color and grids.
+        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 6))
         im = ax.imshow(original_data,
@@ -191,7 +196,7 @@ class Image2D:
                    s=40,
                    c="k",
                    label="Peaks")
-        ax.legend(loc="upper right", frameon=False)
+        ax.legend(frameon=False)
         plt.setp(ax,
                  xlim=[0, n], ylim=[0, m],
                  xlabel="x", ylabel="y",
@@ -296,6 +301,8 @@ class Line1D:
 
         if new_plot:
             lines = []
+            # To add frame and remove the background color and grids.
+            sns.set_style("white")
             fig, ax = plt.subplots(figsize=(9, 6))
             self.fig = fig
             self.ax = ax
@@ -411,7 +418,8 @@ class Line1D:
             for line, c in zip(self.lines, colors):
                 line.set_color(c)
 
-            self.ax.legend(loc="upper right", frameon=False)
+            # seaborn sets frame off by default.
+            self.ax.legend()
             self.fig.set_tight_layout(True)
             plt.show()
 
@@ -465,7 +473,8 @@ class Line1D:
         # Add kde fitting line.
         ax.plot(kde.support, kde_norm, "r--", lw=2, label="kde fitting")
 
-        ax.legend(loc="upper right", frameon=False)
+        # seaborn sets frame off by default.
+        ax.legend()
         fig.set_tight_layout(True)
         plt.show()
 
@@ -805,7 +814,8 @@ class Hist1DTES(Line1D):
             for c, line in zip(colors, self.lines):
                 line.set_color(c)
 
-            self.ax.legend(loc="upper right", frameon=False)
+            # seaborn sets frame off by default.
+            self.ax.legend()
             self.fig.set_tight_layout(True)
             plt.show()
 
