@@ -10,7 +10,7 @@ _Note classes are listed in the format:_
   * _Child 1_
   * _Child 2_
 
-### file_loader.py
+## file_loader.py
 
 _I/O module._
 
@@ -24,7 +24,7 @@ Available classes are following
   * ScanFileAPS29
   * SCanFileSSRL13
 
-### image_processor.py
+## image_processor.py
 
 _Image processor module._
 
@@ -42,7 +42,7 @@ Available classes are one of following
   * Line1DSSRL13
   * Hist1DTES
 
-### hkl_calculator.py
+## hkl_calculator.py
 
 _hkl mapping module._
 
