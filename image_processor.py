@@ -469,7 +469,7 @@ class Line1D:
         kde_norm = np.max(self.y) * kde.density / np.max(kde.density)
 
         # Add kde fitting line.
-        ax.plot(kde.support, kde_norm, "r--", lw=2, label="kde fitting")
+        ax.plot(kde.support, kde_norm, "k--", lw=2, label="kde fitting")
 
         # seaborn sets frame off by default.
         ax.legend()

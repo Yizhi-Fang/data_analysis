@@ -191,7 +191,8 @@ class TESConfigFile(File):
 
             Attributes:
                 data: Information for rectangle (row in configuration data).
-                fc: A float between 0 and 1 indicating face color of rectangle.
+                fc: A color palette (seaborn) indicating the face color
+                    of rectangle object.
             """
 
             def __init__(self, data, fc):
@@ -204,12 +205,13 @@ class TESConfigFile(File):
                 Returns:
                     Rectangle patch.
                 """
+
                 x = self.data[1] - self.data[4]/2
                 y = self.data[2] - self.data[5]/2
                 w = self.data[4]
                 h = self.data[5]
                 return plt.Rectangle((x, y), w, h,
-                                     fc=cm.rainbow(self.fc),
+                                     fc=self.fc,
                                      ec="none")
 
             def add_text(self):
@@ -227,11 +229,14 @@ class TESConfigFile(File):
 
         config_data = self.fetch_data()
 
+        sns.set_style("white")
         plt.ion()
         fig, ax = plt.subplots(figsize=(9, 9))
 
-        color_col = np.linspace(0, 1, ncols)  # Color for each column.
-        colors_all = np.repeat(color_col, nrows)  # Colors for all pixel.
+        # Color for each column.
+        color_col = sns.color_palette("husl", ncols)
+        # Colors for all pixel.
+        colors_all = [(color_col[i],) * nrows for i in range(ncols)]
         for chan, c in zip(range(len(config_data)), colors_all):
             rectangle = Rectangle(config_data.iloc[chan, :], c)
             ax.add_patch(rectangle.draw())
