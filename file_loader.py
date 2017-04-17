@@ -235,15 +235,14 @@ class TESConfigFile(File):
 
         # Color for each column.
         color_col = sns.color_palette("husl", ncols)
-        # Colors for all pixel.
-        colors_all = [(color_col[i],) * nrows for i in range(ncols)]
-        for chan, c in zip(range(len(config_data)), colors_all):
-            rectangle = Rectangle(config_data[chan, :], c)
-            ax.add_patch(rectangle.draw())
-            x = rectangle.add_text()[0]
-            y = rectangle.add_text()[1]
-            text = rectangle.add_text()[2]
-            ax.text(x, y, text, size=10, ha="center", va="center")
+        for idx_col, c in zip(range(0, len(config_data), nrows), color_col):
+            for data in config_data[idx_col:idx_col+nrows, :]:
+                rectangle = Rectangle(data, c)
+                ax.add_patch(rectangle.draw())
+                x = rectangle.add_text()[0]
+                y = rectangle.add_text()[1]
+                text = rectangle.add_text()[2]
+                ax.text(x, y, text, size=10, ha="center", va="center")
 
         ax.axhline(y=0, ls="--", c="k")
         ax.axvline(x=0, ls="--", c="k")
