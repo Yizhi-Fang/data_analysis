@@ -238,7 +238,7 @@ class TESConfigFile(File):
         # Colors for all pixel.
         colors_all = [(color_col[i],) * nrows for i in range(ncols)]
         for chan, c in zip(range(len(config_data)), colors_all):
-            rectangle = Rectangle(config_data.iloc[chan, :], c)
+            rectangle = Rectangle(config_data[chan, :], c)
             ax.add_patch(rectangle.draw())
             x = rectangle.add_text()[0]
             y = rectangle.add_text()[1]
