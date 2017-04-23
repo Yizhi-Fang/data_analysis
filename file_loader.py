@@ -419,7 +419,7 @@ class ScanFileSSRL13(File):
             header = f.readlines()[skiprows - 1]
         header = header.split()[1:]
         col_table = {}
-        for key in ["H", "k", "L", "ChnTron", "TEY", "PdNorm", "Monitor"]:
+        for key in ["H", "K", "L", "ChnTron", "TEY", "PdNorm", "Monitor"]:
             try:
                 col_table[key] = header.index(key)
             except ValueError:
