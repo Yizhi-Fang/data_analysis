@@ -16,7 +16,7 @@ Line1D:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.04.17"
+__version__ = "2017.04.24"
 
 import re
 from abc import ABCMeta, abstractmethod
@@ -109,13 +109,13 @@ class Image2D:
         reduced_data = reduced_data + self.data
         reduced_data[reduced_data < threshold] = 0.0
 
-        # Create 3 x 3 all-connected structure.
-        struct = np.ones((3, 3), dtype=bool)
-
         # Smooth noisy background before passing to maximum filter.
         smoothed_image = gaussian_filter(reduced_data,
                                          sigma=8,
                                          mode="constant")
+
+        # Create 3 x 3 all-connected structure.
+        struct = np.ones((3, 3), dtype=bool)
 
         # Apply the local maximum filter.
         # All pixel is replaced by max within footprint.
