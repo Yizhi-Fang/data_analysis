@@ -12,7 +12,7 @@ File:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.04.17"
+__version__ = "2017.04.24"
 
 import re
 from os.path import join
@@ -40,7 +40,7 @@ class File:
     _signs = ("", "")
     # Extra lines between signal lines and data, default is (1, 1).
     _extra_lines = (1, 1)
-    # Separation in data file, default is space.
+    # Delimitation in data file, default is space.
     _sep = "\s+"
 
     def __init__(self, path, file_name):
@@ -116,7 +116,7 @@ class MCPDataFile(File):
     _signs = ("^\[CDAT0", "^\[CDAT1")
     # ExtraLines between signal lines and data.
     _extra_lines = (14, 1)
-    # Separation in data file.
+    # Delimitation in data file.
     _sep = "\t"
     # x, y dimensions.
     _dim = (1024, 1024)
