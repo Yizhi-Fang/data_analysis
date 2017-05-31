@@ -74,7 +74,7 @@ class Image2D:
         original_data[original_data == 0] = np.nan
 
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
         im = ax.imshow(original_data,
                        origin="lower left",
                        interpolation="nearest",
@@ -178,7 +178,7 @@ class Image2D:
         original_data[original_data == 0] = np.nan
 
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
         im = ax.imshow(original_data,
                        origin="lower left",
                        interpolation="nearest",
@@ -298,8 +298,9 @@ class Line1D:
         if new_plot:
             lines = []
             # To add frame and remove the background color and grids.
-            sns.set_style("white")
-            fig, ax = plt.subplots(figsize=(9, 6))
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
+            fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
             self.ax = ax
             self.lines = lines
@@ -454,9 +455,10 @@ class Line1D:
         input_data = np.repeat(self.x, counts)
 
         # To add frame and remove the background color and grids.
-        sns.set_style("white")
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
 
         ax.hist(input_data, bins=self.x, histtype="step", where="mid",
                 color="g", lw=2)
@@ -585,8 +587,9 @@ class Hist1DTES(Line1D):
         if new_plot:
             lines = []
             # To add frame and remove the background color and grids.
-            sns.set_style("white")
-            fig, ax = plt.subplots(figsize=(9, 6))
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
+            fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
             self.ax = ax
             self.lines = lines

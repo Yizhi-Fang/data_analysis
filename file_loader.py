@@ -147,7 +147,7 @@ class MCPDataFile(File):
             saturate_factor: Factor to be divided by max, default is 1.0.
         """
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
         data = self.fetch_data()
         max_val = np.max(data) # Couldn't find max if array contains nan.
         data[data == 0] = np.nan
@@ -229,9 +229,11 @@ class TESConfigFile(File):
 
         config_data = self.fetch_data()
 
-        sns.set_style("white")
+        # To add frame and remove the background color and grids.
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 9))
+        fig, ax = plt.subplots(figsize=(8, 8))
 
         # Color for each column.
         color_col = sns.color_palette("husl", ncols)
@@ -339,10 +341,11 @@ class ScanFileAPS29(File):
         data = self.fetch_data()
 
         # To add frame and remove the background color and grids.
-        sns.set_style("white")
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         sns.set_palette("husl", len(col_table))
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
         for key in col_table.keys():
             if key != "I0":
                 y = data[:, col_table[key]] / data[:, col_table["I0"]]
@@ -435,10 +438,11 @@ class ScanFileSSRL13(File):
         data = self.fetch_data()
 
         # To add frame and remove the background color and grids.
-        sns.set_style("white")
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         sns.set_palette("husl", len(col_table))
         plt.ion()
-        fig, ax = plt.subplots(figsize=(9, 6))
+        fig, ax = plt.subplots(figsize=(8, 6))
         for key in col_table.keys():
             if key != "Monitor":
                 y = data[:, col_table[key]] / data[:, col_table["Monitor"]]
