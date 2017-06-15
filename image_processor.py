@@ -16,7 +16,7 @@ Line1D:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.05.31"
+__version__ = "2017.06.15"
 
 import re
 from abc import ABCMeta, abstractmethod
@@ -297,15 +297,15 @@ class Line1D:
 
         if new_plot:
             lines = []
-            # To add frame and remove the background color and grids.
-            sns.set_style("ticks", {"xtick.direction": "in",
-                                    "ytick.direction": "in"})
             fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
             self.ax = ax
             self.lines = lines
 
         try:
+            # To add frame and remove the background color and grids.
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
             plt.ion()
             line, = self.ax.plot(self.x, y, "-o", ms=6, lw=2)
             self.lines.append(line)
@@ -586,15 +586,15 @@ class Hist1DTES(Line1D):
 
         if new_plot:
             lines = []
-            # To add frame and remove the background color and grids.
-            sns.set_style("ticks", {"xtick.direction": "in",
-                                    "ytick.direction": "in"})
             fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
             self.ax = ax
             self.lines = lines
 
         try:
+            # To add frame and remove the background color and grids.
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
             plt.ion()
             line, = self.ax.step(self.x, y, lw=2)
             self.lines.append(line)
