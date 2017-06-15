@@ -303,9 +303,6 @@ class Line1D:
             self.lines = lines
 
         try:
-            # To add frame and remove the background color and grids.
-            sns.set_style("ticks", {"xtick.direction": "in",
-                                    "ytick.direction": "in"})
             plt.ion()
             line, = self.ax.plot(self.x, y, "-o", ms=6, lw=2)
             self.lines.append(line)
@@ -454,9 +451,6 @@ class Line1D:
         counts = np.asarray(self.y, dtype=int)
         input_data = np.repeat(self.x, counts)
 
-        # To add frame and remove the background color and grids.
-        sns.set_style("ticks", {"xtick.direction": "in",
-                                "ytick.direction": "in"})
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
 
@@ -592,9 +586,6 @@ class Hist1DTES(Line1D):
             self.lines = lines
 
         try:
-            # To add frame and remove the background color and grids.
-            sns.set_style("ticks", {"xtick.direction": "in",
-                                    "ytick.direction": "in"})
             plt.ion()
             line, = self.ax.step(self.x, y, lw=2)
             self.lines.append(line)

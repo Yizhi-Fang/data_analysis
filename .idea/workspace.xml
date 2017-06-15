@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bde451c-4958-41e6-88b6-949452e15f06" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_loader.py" afterPath="$PROJECT_DIR$/file_loader.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_processor.py" afterPath="$PROJECT_DIR$/image_processor.py" />
     </list>
@@ -28,8 +27,8 @@
       <file leaf-file-name="file_loader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/file_loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="442" column="15" lean-forward="false" selection-start-line="442" selection-start-column="8" selection-end-line="442" selection-end-column="15" />
+            <state relative-caret-position="291">
+              <caret line="232" column="21" lean-forward="false" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="21" />
               <folding>
                 <element signature="e#287#296#0" expanded="true" />
               </folding>
@@ -40,8 +39,8 @@
       <file leaf-file-name="image_processor.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/image_processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="306" column="19" lean-forward="false" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="19" />
+            <state relative-caret-position="246">
+              <caret line="578" column="22" lean-forward="false" selection-start-line="578" selection-start-column="22" selection-end-line="578" selection-end-column="22" />
               <folding>
                 <element signature="e#475#484#0" expanded="true" />
               </folding>
@@ -87,9 +86,9 @@
       <find>fig, ax</find>
       <find>Separation</find>
       <find>sns</find>
-      <find>sns.set_style</find>
       <find>figsize</find>
       <find>set_style</find>
+      <find>sns.set_style</find>
       <find>sns.set</find>
     </findStrings>
   </component>
@@ -100,8 +99,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hkl_calculator.py" />
-        <option value="$PROJECT_DIR$/file_loader.py" />
         <option value="$PROJECT_DIR$/image_processor.py" />
+        <option value="$PROJECT_DIR$/file_loader.py" />
       </list>
     </option>
   </component>
@@ -963,8 +962,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file_loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="442" column="15" lean-forward="false" selection-start-line="442" selection-start-column="8" selection-end-line="442" selection-end-column="15" />
+        <state relative-caret-position="291">
+          <caret line="232" column="21" lean-forward="false" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="21" />
           <folding>
             <element signature="e#287#296#0" expanded="true" />
           </folding>
@@ -973,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image_processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="306" column="19" lean-forward="false" selection-start-line="306" selection-start-column="12" selection-end-line="306" selection-end-column="19" />
+        <state relative-caret-position="246">
+          <caret line="578" column="22" lean-forward="false" selection-start-line="578" selection-start-column="22" selection-end-line="578" selection-end-column="22" />
           <folding>
             <element signature="e#475#484#0" expanded="true" />
           </folding>
