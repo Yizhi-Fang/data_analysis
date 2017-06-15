@@ -308,7 +308,7 @@ class ScanFileAPS29(File):
         """Find out column number for certain variables.
         
         Args:
-            chans: A list of channels recorded.
+            chans: A list of TES channels recorded.
 
         Returns:
             Dictionary with variable names as key and column numbers as value.
