@@ -312,6 +312,7 @@ class ScanFileAPS29(File):
 
         Returns:
             Dictionary with variable names as key and column numbers as value.
+            Choose one of {I0, TEY, PhDiode, TES_total, TES_chanX}.
         """
         col_table = {}
         with open(join(self._path, self._file_name), "r") as f:
@@ -411,6 +412,7 @@ class ScanFileSSRL13(File):
 
         Returns:
             Dictionary with variable names as key and column numbers as value.
+            Choose one of {H, K, L, ChnTron, TEY, PdNorm, Monitor}.
         """
         file = join(self._path, self._file_name)
         skiprows, _ = self.search_line()
