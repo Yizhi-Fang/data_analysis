@@ -299,11 +299,10 @@ class Line1D:
         else:
             y = self.y
 
-        sns.set_style("ticks", {"xtick.direction": "in",
-                                "ytick.direction": "in"})
-        plt.ion()
-
         if new_plot:
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
+            plt.ion()
             lines = []
             fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
@@ -587,11 +586,10 @@ class Hist1DTES(Line1D):
         else:
             y = self.y
 
-        sns.set_style("ticks", {"xtick.direction": "in",
-                                "ytick.direction": "in"})
-        plt.ion()
-
         if new_plot:
+            sns.set_style("ticks", {"xtick.direction": "in",
+                                    "ytick.direction": "in"})
+            plt.ion()
             lines = []
             fig, ax = plt.subplots(figsize=(8, 6))
             self.fig = fig
