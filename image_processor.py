@@ -16,7 +16,7 @@ Line1D:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.06.15"
+__version__ = "2017.07.05"
 
 import re
 from abc import ABCMeta, abstractmethod
@@ -73,6 +73,8 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
         im = ax.imshow(original_data,
@@ -177,6 +179,8 @@ class Image2D:
         original_data = original_data + self.data
         original_data[original_data == 0] = np.nan
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
         im = ax.imshow(original_data,
@@ -295,6 +299,10 @@ class Line1D:
         else:
             y = self.y
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
+        plt.ion()
+
         if new_plot:
             lines = []
             fig, ax = plt.subplots(figsize=(8, 6))
@@ -303,7 +311,6 @@ class Line1D:
             self.lines = lines
 
         try:
-            plt.ion()
             line, = self.ax.plot(self.x, y, "-o", ms=6, lw=2)
             self.lines.append(line)
 
@@ -451,6 +458,8 @@ class Line1D:
         counts = np.asarray(self.y, dtype=int)
         input_data = np.repeat(self.x, counts)
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
 
@@ -578,6 +587,10 @@ class Hist1DTES(Line1D):
         else:
             y = self.y
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
+        plt.ion()
+
         if new_plot:
             lines = []
             fig, ax = plt.subplots(figsize=(8, 6))
@@ -586,7 +599,6 @@ class Hist1DTES(Line1D):
             self.lines = lines
 
         try:
-            plt.ion()
             line, = self.ax.step(self.x, y, lw=2)
             self.lines.append(line)
 

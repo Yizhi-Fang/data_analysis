@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bde451c-4958-41e6-88b6-949452e15f06" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/file_loader.py" afterPath="$PROJECT_DIR$/file_loader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_processor.py" afterPath="$PROJECT_DIR$/image_processor.py" />
     </list>
     <ignored path="mycodes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="file_loader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file_loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="320" column="6" lean-forward="false" selection-start-line="320" selection-start-column="6" selection-end-line="320" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
                 <element signature="e#287#296#0" expanded="true" />
               </folding>
@@ -38,8 +40,8 @@
       <file leaf-file-name="image_processor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image_processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="578" column="22" lean-forward="false" selection-start-line="578" selection-start-column="22" selection-end-line="578" selection-end-column="22" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#475#484#0" expanded="true" />
               </folding>
@@ -73,7 +75,6 @@
       <find>plt.show</find>
       <find>new_</find>
       <find>new_plot</find>
-      <find>plt.ion</find>
       <find>Model</find>
       <find>inferno</find>
       <find>plasma</find>
@@ -89,6 +90,8 @@
       <find>set_style</find>
       <find>sns.set_style</find>
       <find>sns.set</find>
+      <find>sns.set_st</find>
+      <find>plt.ion</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -961,8 +964,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/image_processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="578" column="22" lean-forward="false" selection-start-line="578" selection-start-column="22" selection-end-line="578" selection-end-column="22" />
+        <state relative-caret-position="270">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding>
             <element signature="e#475#484#0" expanded="true" />
           </folding>
@@ -971,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file_loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="320" column="6" lean-forward="false" selection-start-line="320" selection-start-column="6" selection-end-line="320" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="e#287#296#0" expanded="true" />
           </folding>

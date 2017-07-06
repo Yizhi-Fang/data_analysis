@@ -12,7 +12,7 @@ File:
 """
 
 __author__ = "Yizhi Fang"
-__version__ = "2017.06.15"
+__version__ = "2017.07.05"
 
 import re
 from os.path import join
@@ -146,6 +146,8 @@ class MCPDataFile(File):
         Args:
             saturate_factor: Factor to be divided by max, default is 1.0.
         """
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
         data = self.fetch_data()
@@ -340,6 +342,8 @@ class ScanFileAPS29(File):
         col_table = self.col_num()
         data = self.fetch_data()
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         sns.set_palette("husl", len(col_table))
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
@@ -435,6 +439,8 @@ class ScanFileSSRL13(File):
         col_table = self.col_num()
         data = self.fetch_data()
 
+        sns.set_style("ticks", {"xtick.direction": "in",
+                                "ytick.direction": "in"})
         sns.set_palette("husl", len(col_table))
         plt.ion()
         fig, ax = plt.subplots(figsize=(8, 6))
