@@ -409,7 +409,6 @@ class Line1D:
 
             line_fit, = self.ax.plot(self.x, result.best_fit,
                                      lw=2,
-                                     ls="--",
                                      label="{:s} fitting".format(method))
             self.lines.append(line_fit)
 
@@ -812,7 +811,6 @@ class Hist1DTES(Line1D):
 
             line_fit, = self.ax.plot(self.x, fitted_y,
                                      lw=2,
-                                     ls="--",
                                      label="{:s} fitting".format(method))
             self.lines.append(line_fit)
 
